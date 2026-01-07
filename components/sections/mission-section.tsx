@@ -18,7 +18,9 @@ export function MissionSection() {
       </div>
 
       <ScrollOpacity startOpacity={0.3} endOpacity={1} className="max-w-6xl relative z-10">
-        <p className="data-tag mb-12 text-center">PRODUCT DEVELOPMENT PHILOSOPHY</p>
+        <p className="font-mono text-[#6B7280] text-3xl md:text-4xl tracking-[0.3em] uppercase mb-12 text-center">
+          PRODUCT DEVELOPMENT PHILOSOPHY
+        </p>
 
         <div className="space-y-16">
           {/* 1) Combatant-Centered */}

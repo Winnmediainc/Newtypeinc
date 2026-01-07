@@ -30,7 +30,7 @@ export function CEOSection() {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
         >
-          <p className="data-tag mb-8">CEO MESSAGE</p>
+          <p className="font-mono text-[#6B7280] text-2xl md:text-3xl tracking-[0.3em] uppercase mb-8">CEO MESSAGE</p>
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 uppercase">
             <DecodeText text="THE BATTLEFIELD" delay={0} />

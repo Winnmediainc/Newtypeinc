@@ -34,7 +34,7 @@ export function HistorySection() {
     <section ref={ref} className="min-h-screen flex items-center px-8 md:px-16 lg:px-24 py-32">
       <div className="max-w-6xl mx-auto w-full">
         <motion.p
-          className="font-mono text-[#6B7280] text-xs tracking-[0.3em] uppercase mb-20"
+          className="font-mono text-[#6B7280] text-2xl md:text-3xl tracking-[0.3em] uppercase mb-20"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
