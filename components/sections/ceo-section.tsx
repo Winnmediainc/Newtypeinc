@@ -20,7 +20,12 @@ export function CEOSection() {
             opacity: 0.5,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#000000] via-[#000000]/80 to-transparent" />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-[#000000] via-[#000000]/50 to-transparent"
+          style={{
+            background: "linear-gradient(to right, #000000 0%, #000000cc 30%, transparent 60%)",
+          }}
+        />
       </div>
 
       {/* Content */}
