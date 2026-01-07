@@ -1,0 +1,544 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Pure Black background, Cyan accent color */
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #6b7280;
+  --accent-cyan: #00ffff;
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #6b7280;
+  --accent-cyan: #00ffff;
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* Monospace only - JetBrains Mono */
+  --font-sans: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  ::selection {
+    background: #00ffff;
+    color: #000000;
+  }
+
+  /* Hide default scrollbar */
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  * {
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  .text-muted {
+    color: #6b7280;
+  }
+
+  .text-cyan {
+    color: #00ffff;
+  }
+
+  .font-mono {
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  /* Remove glitch, add typewriter decode effect */
+  .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 2s steps(40) forwards;
+  }
+
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /* Decode text animation */
+  .decode-text {
+    animation: decode 0.8s ease-out forwards;
+  }
+
+  @keyframes decode {
+    0% {
+      opacity: 0;
+      filter: blur(4px);
+      transform: translateY(10px);
+    }
+    50% {
+      opacity: 0.5;
+      filter: blur(2px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+  }
+
+  /* HUD Corner brackets */
+  .hud-corner {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .hud-corner::before,
+  .hud-corner::after {
+    content: "";
+    position: absolute;
+    background: #ffffff;
+  }
+
+  .hud-corner-tl {
+    top: 20px;
+    left: 20px;
+  }
+  .hud-corner-tl::before {
+    width: 20px;
+    height: 1px;
+    top: 0;
+    left: 0;
+  }
+  .hud-corner-tl::after {
+    width: 1px;
+    height: 20px;
+    top: 0;
+    left: 0;
+  }
+
+  .hud-corner-tr {
+    top: 20px;
+    right: 20px;
+  }
+  .hud-corner-tr::before {
+    width: 20px;
+    height: 1px;
+    top: 0;
+    right: 0;
+  }
+  .hud-corner-tr::after {
+    width: 1px;
+    height: 20px;
+    top: 0;
+    right: 0;
+  }
+
+  .hud-corner-bl {
+    bottom: 20px;
+    left: 20px;
+  }
+  .hud-corner-bl::before {
+    width: 20px;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+  }
+  .hud-corner-bl::after {
+    width: 1px;
+    height: 20px;
+    bottom: 0;
+    left: 0;
+  }
+
+  .hud-corner-br {
+    bottom: 20px;
+    right: 20px;
+  }
+  .hud-corner-br::before {
+    width: 20px;
+    height: 1px;
+    bottom: 0;
+    right: 0;
+  }
+  .hud-corner-br::after {
+    width: 1px;
+    height: 20px;
+    bottom: 0;
+    right: 0;
+  }
+
+  /* Target lock animation */
+  .target-lock {
+    position: relative;
+  }
+
+  .target-lock::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+
+  .target-lock:hover::before {
+    border-color: #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+
+  .target-lock::after {
+    content: "[ LOCKED ]";
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #00ffff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: "JetBrains Mono", monospace;
+    letter-spacing: 2px;
+  }
+
+  .target-lock:hover::after {
+    opacity: 1;
+  }
+
+  .glow-line {
+    background: linear-gradient(180deg, transparent, #ffffff, transparent);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  .ghost-button {
+    @apply px-8 py-3 border border-white/30 text-white/80 uppercase tracking-widest text-sm transition-all duration-300;
+    background: transparent;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .ghost-button:hover {
+    @apply border-white text-white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Cyan accent button */
+  .cyan-button {
+    @apply px-8 py-3 border text-sm uppercase tracking-widest transition-all duration-300;
+    border-color: #00ffff;
+    color: #00ffff;
+    background: transparent;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  .cyan-button:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+  }
+
+  /* Marquee animations */
+  .animate-marquee-rtl {
+    animation: marquee-rtl 30s linear infinite;
+  }
+
+  @keyframes marquee-rtl {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee-ltr {
+    animation: marquee-ltr 40s linear infinite;
+  }
+
+  @keyframes marquee-ltr {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Steel metallic text effect */
+  .steel-text {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      #e8e8e8 0%,
+      #ffffff 15%,
+      #b8b8b8 30%,
+      #d0d0d0 45%,
+      #a0a0a0 60%,
+      #c8c8c8 75%,
+      #909090 90%,
+      #b0b0b0 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  }
+
+  .steel-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 45%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0.4) 55%,
+      transparent 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: steel-shine 4s ease-in-out infinite;
+    background-size: 200% 100%;
+  }
+
+  @keyframes steel-shine {
+    0% {
+      background-position: 200% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
+
+  /* Fade up animation with ease-out-quart */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
+
+  /* Warning blink */
+  .warning-blink {
+    animation: warningBlink 1s ease-in-out infinite;
+  }
+
+  @keyframes warningBlink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  /* Scan line effect */
+  .scan-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scan-line::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ffff, transparent);
+    animation: scanLine 3s ease-in-out infinite;
+  }
+
+  @keyframes scanLine {
+    0% {
+      top: 0;
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  /* Data tag style */
+  .data-tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #6b7280;
+    text-transform: uppercase;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  /* Terminal input style */
+  .terminal-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #6b7280;
+    color: #ffffff;
+    font-family: "JetBrains Mono", monospace;
+    padding: 8px 0;
+    width: 100%;
+    transition: border-color 0.3s ease;
+  }
+
+  .terminal-input:focus {
+    outline: none;
+    border-color: #00ffff;
+  }
+
+  .terminal-input::placeholder {
+    color: #6b7280;
+  }
+}
