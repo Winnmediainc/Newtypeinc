@@ -4,19 +4,7 @@ import { DecodeText } from "@/components/decode-text"
 
 export function MissionSection() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-8 py-32 relative overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center grayscale"
-          style={{
-            backgroundImage: `url('/images/jo-background.jpg')`,
-            opacity: 0.6,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/70 via-[#000000]/60 to-[#000000]/70" />
-      </div>
-
+    <section className="min-h-screen flex flex-col justify-center items-center px-8 py-32 relative overflow-hidden bg-black">
       <ScrollOpacity startOpacity={0.3} endOpacity={1} className="max-w-6xl relative z-10">
         <p className="font-mono text-[#6B7280] text-3xl md:text-4xl tracking-[0.3em] uppercase mb-12 text-center">
           PRODUCT DEVELOPMENT PHILOSOPHY
