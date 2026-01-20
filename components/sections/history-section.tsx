@@ -31,10 +31,10 @@ export function HistorySection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section ref={ref} className="min-h-screen flex items-center px-8 md:px-16 lg:px-24 py-32">
+    <section ref={ref} className="min-h-screen flex items-center px-4 sm:px-6 md:px-16 lg:px-24 py-16 md:py-32">
       <div className="max-w-6xl mx-auto w-full">
         <motion.p
-          className="font-mono text-[#6B7280] text-2xl md:text-3xl tracking-[0.3em] uppercase mb-20"
+          className="font-mono text-[#6B7280] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] uppercase mb-10 md:mb-20"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
@@ -44,7 +44,7 @@ export function HistorySection() {
 
         <div className="relative">
           <motion.div
-            className="absolute left-[110px] top-[8px] bottom-0 w-[2px] bg-gradient-to-b from-[#00FFFF] via-[#00FFFF]/50 to-transparent"
+            className="absolute left-[60px] sm:left-[80px] md:left-[110px] top-[8px] bottom-0 w-[2px] bg-gradient-to-b from-[#00FFFF] via-[#00FFFF]/50 to-transparent"
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : {}}
             transition={{ duration: 1.5, ease: [0.33, 1, 0.68, 1] }}
@@ -54,7 +54,7 @@ export function HistorySection() {
             }}
           />
 
-          <div className="space-y-16">
+            <div className="space-y-8 md:space-y-16">
             {timeline.map((item, index) => (
               <motion.div
                 key={`${item.date}-${index}`}
@@ -77,12 +77,12 @@ export function HistorySection() {
                 )}
 
                 <span
-                  className={`font-mono text-sm w-24 pt-[8px] transition-colors duration-300 ${hoveredIndex === index ? "text-[#00FFFF]" : "text-[#6B7280]"}`}
+                  className={`font-mono text-xs sm:text-sm w-16 sm:w-20 md:w-24 pt-[8px] transition-colors duration-300 ${hoveredIndex === index ? "text-[#00FFFF]" : "text-[#6B7280]"}`}
                 >
                   {item.date}
                 </span>
 
-                <div className="w-3 h-3 rounded-full mx-8 relative flex-shrink-0 mt-[8px]">
+                <div className="w-2 h-2 md:w-3 md:h-3 rounded-full mx-4 sm:mx-6 md:mx-8 relative flex-shrink-0 mt-[8px]">
                   <div
                     className={`absolute inset-0 rounded-full transition-all duration-300 ${hoveredIndex === index ? "bg-[#00FFFF] shadow-[0_0_20px_rgba(0,255,255,1),0_0_40px_rgba(0,255,255,0.5)]" : "bg-white/30 border border-white/20"}`}
                   />
@@ -93,7 +93,7 @@ export function HistorySection() {
 
                 <div className="flex-1">
                   <span
-                    className={`text-lg md:text-xl font-light uppercase tracking-wider transition-colors duration-300 leading-relaxed ${hoveredIndex === index ? "text-white" : "text-white/80"}`}
+                    className={`text-sm sm:text-base md:text-lg lg:text-xl font-light uppercase tracking-wide md:tracking-wider transition-colors duration-300 leading-relaxed ${hoveredIndex === index ? "text-white" : "text-white/80"}`}
                   >
                     {item.event}
                   </span>

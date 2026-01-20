@@ -101,7 +101,7 @@ export function BarbaraSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-8 md:px-16 lg:px-24 max-w-4xl">
+      <div className="relative z-10 px-4 sm:px-6 md:px-16 lg:px-24 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -109,7 +109,7 @@ export function BarbaraSection() {
         >
           <p className="font-mono text-[#00FFFF] text-xs tracking-[0.3em] uppercase mb-4">CLASSIFIED</p>
 
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-12 uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-12 uppercase tracking-tight">
             PROJECT:
             <br />
             BARBARA

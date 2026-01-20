@@ -29,15 +29,15 @@ export function CEOSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-8 md:px-16 lg:px-24 max-w-4xl">
+      <div className="relative z-10 px-4 sm:px-6 md:px-16 lg:px-24 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
         >
-          <p className="font-mono text-[#6B7280] text-2xl md:text-3xl tracking-[0.3em] uppercase mb-8">CEO MESSAGE</p>
+          <p className="font-mono text-[#6B7280] text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] uppercase mb-6 md:mb-8">CEO MESSAGE</p>
 
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 uppercase">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 md:mb-8 uppercase">
             <DecodeText text="THE BATTLEFIELD" delay={0} />
             <br />
             <DecodeText text="DOESN'T WAIT." delay={200} />
@@ -45,7 +45,7 @@ export function CEOSection() {
             <DecodeText text="NEITHER DO WE." delay={400} />
           </h2>
 
-          <p className="text-[#6B7280] text-lg md:text-xl leading-relaxed max-w-2xl">
+          <p className="text-[#6B7280] text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl">
             In the age of AI warfare, hesitation is defeat. We build systems that are mission-ready tonight, not
             someday. This is not innovation for innovation's sake. This is survival.
           </p>

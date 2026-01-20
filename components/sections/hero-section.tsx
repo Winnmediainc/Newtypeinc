@@ -28,16 +28,16 @@ export function HeroSection() {
 
       <div className="text-center z-10">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight leading-none mb-8 uppercase">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-none mb-6 md:mb-8 uppercase">
             <DecodeText text="A NEWTYPE OF" className="steel-text block" delay={300} />
-            <DecodeText text="OPERATION IS" className="steel-text block mt-2" delay={600} />
-            <DecodeText text="INVEVITABLE." className="steel-text block mt-2" delay={900} />
+            <DecodeText text="OPERATION IS" className="steel-text block mt-1 md:mt-2" delay={600} />
+            <DecodeText text="INVEVITABLE." className="steel-text block mt-1 md:mt-2" delay={900} />
           </h1>
         </motion.div>
 
         {/* Subtext */}
         <motion.div
-          className="font-mono text-[#6B7280] text-xs md:text-sm tracking-[0.3em] uppercase mt-16 space-y-2"
+          className="font-mono text-[#6B7280] text-[10px] sm:text-xs md:text-sm tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] uppercase mt-8 md:mt-16 space-y-1 md:space-y-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
