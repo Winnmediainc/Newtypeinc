@@ -4,6 +4,7 @@ import { CEOSection } from "@/components/sections/ceo-section"
 import { MissionSection } from "@/components/sections/mission-section"
 import { HistorySection } from "@/components/sections/history-section"
 import { BarbaraSection } from "@/components/sections/barbara-section"
+import { StrengthsSection } from "@/components/sections/strengths-section"
 import { HighlightsSection } from "@/components/sections/highlights-section"
 import { ContactSection } from "@/components/sections/contact-section"
 
@@ -16,14 +17,17 @@ export default function HomePage() {
         <div id="ceo">
           <CEOSection />
         </div>
+        <div id="history">
+          <HistorySection />
+        </div>
         <div id="philosophy">
           <MissionSection />
         </div>
         <div id="barbara">
           <BarbaraSection />
         </div>
-        <div id="history">
-          <HistorySection />
+        <div id="strengths">
+          <StrengthsSection />
         </div>
         <HighlightsSection />
         <div id="contact">

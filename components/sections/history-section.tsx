@@ -18,7 +18,7 @@ const timeline = [
     date: "2025.05",
     event: "LANPAC 2025 (Pyeongtaek / CP.Humphreys) On-Site Demonstration (for JUSMAG-K, DEVCOM)",
   },
-  { date: "2025.05", event: "2 Operational Commands (U.S. Army, OOO Command) Field Test Confirmed" },
+  
   { date: "2025.06", event: "Corporate Establishment" },
   { date: "2025.09", event: "SEED Investment Secured (3 Companies)" },
   { date: "2025.10", event: "Venture Enterprise Certification" },
@@ -39,7 +39,7 @@ export function HistorySection() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
         >
-          /// MISSION LOG ///
+          MISSION LOG
         </motion.p>
 
         <div className="relative">

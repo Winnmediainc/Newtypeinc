@@ -107,7 +107,7 @@ export function BarbaraSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
         >
-          <p className="font-mono text-[#00FFFF] text-xs tracking-[0.3em] uppercase mb-4">/// CLASSIFIED ///</p>
+          <p className="font-mono text-[#00FFFF] text-xs tracking-[0.3em] uppercase mb-4">CLASSIFIED</p>
 
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-12 uppercase tracking-tight">
             PROJECT:

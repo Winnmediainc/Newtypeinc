@@ -46,7 +46,7 @@ export function ContactSection() {
         transition={{ duration: 1, ease: [0.33, 1, 0.68, 1] }}
       >
         <p className="font-mono text-[#6B7280] text-2xl md:text-3xl tracking-[0.3em] uppercase mb-12">
-          /// TRANSMISSION CHANNEL ///
+          TRANSMISSION CHANNEL
         </p>
 
         <div className="border border-[#00FFFF]/30 p-8 mb-8 text-center max-w-xl mx-auto relative">
