@@ -2,7 +2,6 @@ import type React from "react"
 import { JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import { LanguageProvider } from "@/contexts/language-context"
-import { HUDLayer } from "@/components/hud-layer"
 import type { Metadata } from "next"
 
 const jetbrainsMono = JetBrains_Mono({
@@ -44,7 +43,6 @@ export default function RootLayout({
     <html lang="en" className={jetbrainsMono.variable}>
       <body className="bg-[#000000] text-white font-mono">
         <LanguageProvider>
-          <HUDLayer />
           {children}
         </LanguageProvider>
       </body>
