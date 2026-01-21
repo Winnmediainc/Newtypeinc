@@ -7,22 +7,23 @@ import { useRef, useState } from "react"
 const timeline = [
   {
     date: "2025.03",
-    event: "Development of Voice Recognition A.I.-Based Tactical Fire Command / Target Processing Solution 'Barbara'",
+    title: "BARBARA",
+    description: "Voice Recognition A.I.-Based Tactical Fire Command / Target Processing Solution",
   },
   {
     date: "2025.04",
-    event:
-      "U.S. Army Artillery School (Oklahoma / Ft.Sill) Fires Symposium 2025 On-Site Demonstration (for Futures Command)",
+    title: "Demonstration at 2025 Fires Symposium",
+    description: "organized by the U.S. Artillery School For Futures Command",
   },
   {
     date: "2025.05",
-    event: "LANPAC 2025 (Pyeongtaek / CP.Humphreys) On-Site Demonstration (for JUSMAG-K, DEVCOM)",
+    title: "Field Test Confirmed",
+    description: "with 2 Operational Commands after LANPAC 2025 on-site demonstration",
   },
-  
-  { date: "2025.06", event: "Corporate Establishment" },
-  { date: "2025.09", event: "SEED Investment Secured (3 Companies)" },
-  { date: "2025.10", event: "Venture Enterprise Certification" },
-  { date: "2025.11", event: "US Subsidiary Established (Virginia)" },
+  { date: "2025.06", title: "Corporate Establishment", description: "" },
+  { date: "2025.09", title: "SEED Investment Secured (3 Companies)", description: "" },
+  { date: "2025.10", title: "Venture Enterprise Certification", description: "" },
+  { date: "2025.11", title: "US Subsidiary Established (Virginia)", description: "" },
 ]
 
 export function HistorySection() {
@@ -93,10 +94,17 @@ export function HistorySection() {
 
                 <div className="flex-1">
                   <span
-                    className={`text-sm sm:text-base md:text-lg lg:text-xl font-light uppercase tracking-wide md:tracking-wider transition-colors duration-300 leading-relaxed ${hoveredIndex === index ? "text-white" : "text-white/80"}`}
+                    className={`text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-wide md:tracking-wider transition-colors duration-300 leading-relaxed block ${hoveredIndex === index ? "text-white" : "text-white/80"}`}
                   >
-                    {item.event}
+                    {item.title}
                   </span>
+                  {item.description && (
+                    <span
+                      className={`text-xs sm:text-sm md:text-base font-light uppercase tracking-wide transition-colors duration-300 leading-relaxed block mt-1 ${hoveredIndex === index ? "text-white/70" : "text-white/50"}`}
+                    >
+                      {item.description}
+                    </span>
+                  )}
                 </div>
               </motion.div>
             ))}
